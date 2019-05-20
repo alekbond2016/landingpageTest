@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Contact Me Animation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Condensed'>
 
@@ -21,20 +21,24 @@
     <main>
       <section>
         <div class="content">
-          <img src="img/avatar4.png" alt="Profile Image">
+          <img class="jello-horizontal" id="mi_imagen" src="img/avatar_English1.png" alt="Profile Image"  type="button" onclick="espanol(this)">
 
           <aside>
-            <h1 class="name">Hi, I'm Ruben Dario</h1>
-            <p>I'm a web designer / developer </p><br>
+          
+            <div id="cabecera">
+            
+            <h1 class="name">Hi, I'm Ruben</h1> 
+            
+            <p>I'm a web designer / developer </p><br> 
             <span class="text_email"><i class="far fa-envelope"></i>&nbsp rubendarioo2019@gmail.com </span><br>
             <span class="text_email"><i class="fab fa-whatsapp"></i>&nbsp (593) 0979717316 </span>
 
-<br><br>
+            <br><br>
              <p class="line-1 anim-typewriter"><q>Keep calm practice makes perfect</q></p> 
-            
+            </div>
           </aside>
-          <button>
-            <span>Contact Me</span>
+          <button class="jello-horizontal" >
+            <span id="boton">Contact Me</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#07cb79"> <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z"></path> </g> </svg>
           </button>
         </div>
@@ -139,6 +143,80 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script  src="js/index.js"></script>
+
+    <script>
+      var a=true;
+      var b=1;
+
+      function espanol(x) {
+        
+    
+
+        if(b==1)  
+    {
+       
+          document.getElementById("mi_imagen").src = 'img/avatar_Spain.png';
+          
+          a=false;
+
+          document.getElementById("cabecera").innerHTML = "<h1 class='name'>Hola, Soy Ruben</h1>"+
+            "<p>Diseñador y Programador Web </p><br>"+
+            "<span class='text_email'><i class='far fa-envelope'></i>&nbsp rubendarioo2019@gmail.com </span><br>"+
+            "<span class='text_email'><i class='fab fa-whatsapp'></i>&nbsp (593) 0979717316 </span><br><br>"+
+            "<p class='line-1 anim-typewriter'><q>Calma, la practica hace al maestro</q></p>" ;
+
+          document.getElementById("boton").innerHTML = "Contactame";
+    }
+    // else{
+
+    //       // document.getElementById("mi_imagen").src = 'img/avatar_English1.png';
+    //       // b=2;
+    //       // a=true;
+
+
+    //       // document.getElementById("cabecera").innerHTML = "<h1 class='name'>Hi, I'm Ruben</h1>"+
+    //       //   "<p>I'm a web designer / developer </p><br>"+
+    //       //   "<span class='text_email'><i class='far fa-envelope'></i>&nbsp rubendarioo2019@gmail.com </span><br>"+
+    //       //   "<span class='text_email'><i class='fab fa-whatsapp'></i>&nbsp (593) 0979717316 </span><br><br>"+
+    //       //   "<p class='line-1 anim-typewriter'><q>Keep calm practice makes perfect</q></p>" ;
+    //       // document.getElementById("boton").innerHTML = "Contact me";
+    // }
+    // return false;
+
+
+    // }
+
+
+    if (b==0) {
+                document.getElementById("mi_imagen").src = 'img/avatar_English1.png';
+          
+          a=true;
+
+
+          document.getElementById("cabecera").innerHTML = "<h1 class='name'>Hi, I'm Ruben</h1>"+
+            "<p>I'm a web designer / developer </p><br>"+
+            "<span class='text_email'><i class='far fa-envelope'></i>&nbsp rubendarioo2019@gmail.com </span><br>"+
+            "<span class='text_email'><i class='fab fa-whatsapp'></i>&nbsp (593) 0979717316 </span><br><br>"+
+            "<p class='line-1 anim-typewriter'><q>Keep calm practice makes perfect</q></p>" ;
+          document.getElementById("boton").innerHTML = "Contact me";
+    }
+
+    if (b==2) {
+
+      document.getElementById("mi_imagen").src = 'img/lionloop1.svg';
+                document.getElementById("cabecera").innerHTML = "<h1 class='name'>Signo Leo</h1>"+
+            "<p>Leo es creativo y extrovertido. Tiene ambición, valentía y total seguridad en sus capacidades. </p><br>"+
+          
+            "<p class='line-1 anim-typewriter'><q>Es buen idealista e inteligente</q></p>" ;
+      
+    }
+    b++;
+    if (b>2) {
+      b=0;
+    }
+
+}
+</script>
 </body>
 
 </html>
